@@ -33,6 +33,28 @@
 # into a sorted hand.
 # Hint: Also, remember to use % to get the one's digit, and use //= to get rid of the one's digit.
 
+def match(hand):
+    a = 0
+    for i in str(hand):
+        if(i==a):
+            return [int(i),int(i)]
+        a = i
+    res = list(map(int, str(hand)))
+    return [max(res)]
+
 def playstep2(hand, dice):
 	# your code goes here
-	pass
+    pairmatch = match(hand)
+    h = []
+    d = list(map(int, str(dice)))
+    if(len(pairmatch)>1):
+        h = pairmatch + [d[-1]]
+        d = d[:-1]
+    else:
+        h = pairmatch + d[-2:]
+        d = d[:-2]
+    h.sort()
+    h = h[::-1]
+    handres = int("".join(list(map(str, h))))
+    diceres = int("".join(list(map(str, d))))
+    return (handres,diceres)
