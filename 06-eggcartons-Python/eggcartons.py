@@ -6,4 +6,11 @@
 
 def fun_eggcartons(eggs):
 	# your code goes here
-	return 1
+	if(eggs==0):
+		return 0
+	elif(eggs%12==0):
+		a=int(eggs/12)
+		return a
+	else:
+		b=int(eggs/12) + 1
+		return b
