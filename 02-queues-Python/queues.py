@@ -9,10 +9,13 @@ class Queue:
         self.storage = [head]
 
     def enqueue(self, new_element):
-        pass
+        l = self.storage[::-1]
+        l.append(new_element)
+        self.storage = l[::-1]
 
     def peek(self):
-        pass 
+        return self.storage[-1] 
 
     def dequeue(self):
-        pass
+        dequeued = self.storage.pop()
+        return dequeued
