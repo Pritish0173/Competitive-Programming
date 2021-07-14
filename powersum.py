@@ -35,4 +35,6 @@ assert powerSum(10, 2)==385,'test case failed'
 assert powerSum(0, 2)==0,'test case failed'
 assert powerSum(10, 0)==10,'test case failed'
 assert powerSum(10, 5)==220825,'test case failed'
+assert powerSum(-10, 5)==0,'test case failed'
+assert powerSum(10, -5)==0,'test case failed'
 print ("All test cases passed...")
