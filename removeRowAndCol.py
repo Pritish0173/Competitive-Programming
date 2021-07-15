@@ -23,6 +23,19 @@
 
 def removeRowAndCol(L, row, col):
     # Your code goes here...
-    pass
+    l = []
+    for i in range(len(L)):
+        l2 = []
+        for j in range(len(L[0])):      
+            if(i!=row and j!=col):
+                l2.append(L[i][j])  
+        if(l2!=[]):
+            l.append(l2)             
+    return l
+
 
 # Write your own test cases.
+assert removeRowAndCol([ [ 2, 3, 4, 5],[ 8, 7, 6, 5],[ 0, 1, 2, 3] ],1,2)==[[2, 3, 5], [0, 1, 3]], 'test case failed'
+assert removeRowAndCol([ [ 3, 4, 5],[ 7, 6, 5],[ 0, 1, 3] ],0,1)==[[7, 5], [0, 3]], 'test case failed'
+assert removeRowAndCol([ [ 3, 4, 5],[ 7, 6, 5],[ 0, 1, 3] ],0,0)==[[6, 5], [1, 3]], 'test case failed'
+print("All test cases passed")
