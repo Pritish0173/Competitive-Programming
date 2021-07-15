@@ -5,6 +5,15 @@
 
 
 def fun_kth_occurrences(s, n):
-	return 'a'
+    setstr = set(s)
+    d = {}
+    for i in setstr:
+        d[i] = s.count(i)
+    l = []
+    for i in d:
+        l.append([d[i],i])
+    l.sort()
+    l = l[::-1]
+    return l[n-1][1]
 
 
