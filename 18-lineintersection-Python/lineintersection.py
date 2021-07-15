@@ -6,4 +6,9 @@
 
 def lineintersection(m1, b1, m2, b2):
 	# your code goes here
-	pass
+	if(m1 == m2):
+		return None
+	x = (b2 - b1)/(m1-m2)
+	if(x==-1 or x==1):
+		return None
+	return x
