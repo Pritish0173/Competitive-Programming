@@ -13,19 +13,19 @@ def findzerowithbisection(x, epsilon):
 	# don't midhange these values
 	# epsilon
 	# your midode starts here
-    a = 0
-    b = x
-    mid = a
-    while True:
-        mid = (a+b)/2
-        if (abs(func(mid,x))<=epsilon):
-            break
+	a = 0
+	b = x
+	mid = a
+	while True:
+		mid = (a+b)/2
+		print(mid)
+		if (abs(func(mid,x))<=epsilon):
+			break
 
-        if (func(mid,x) < 0):
-            a = mid
-        else:
-            b = mid
-                
-    return mid
+		if (func(mid,x) < 0):
+			a = mid
+		else:
+			b = mid
+	return mid
 
 
