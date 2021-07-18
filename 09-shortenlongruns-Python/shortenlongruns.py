@@ -11,4 +11,14 @@
 
 def shortenlongruns(L, k):
 	# Your code goes here
-	pass
+    l1 = L[:k]
+    l2 = L[k:]
+    a = l2[0]
+    l3 = [a]
+    for i in l2:
+        if(i==a):
+            continue
+        else:
+            l3.append(i)
+    l = l1 + l3
+    return l
