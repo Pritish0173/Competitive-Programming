@@ -13,6 +13,47 @@
 #   [ 2, 1]]
 # Each row and each column add to 3, but one diagonal adds to 2 and the other to 4.
 
+def horizontal(a):
+	Sum = set()
+	s = 0
+	for i in range(len(a)):
+		h = sum(a[i])
+		Sum.add(h)
+		s = h
+	if(len(Sum)>1):
+		return False
+	return s
+
+def vertical(a):
+	Sum = set()
+	s = 0
+	for i in range(len(a)):
+		l = [a[x][i] for x in range(len(a))]
+		v = sum(l)
+		Sum.add(v)
+		s = v
+	if(len(Sum)>1):
+		return False
+	return s
+
+def diagonal(a):
+	d1 = 0
+	d2 = 0
+	for i in range(len(a)):
+		d1 += a[i][i]
+		d2 += a[-i-1][-i-1]
+	if(d1!=d2):
+		return False
+	return d1	
+
 def ismostlymagicsquare(a):
 	# Your code goes here
-	pass
+	hor = horizontal(a)
+	ver = vertical(a)
+	diag = diagonal(a)
+	if(hor and ver and diag):
+		if(hor==ver and ver==diag and diag==hor):
+			return True
+	return False
+
+	
