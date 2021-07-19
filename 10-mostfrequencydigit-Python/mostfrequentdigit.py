@@ -4,4 +4,12 @@
 
 def mostfrequentdigit(n):
 	# your code goes here
-	pass
+	a = abs(n)
+	s = str(a)
+	ss = set(s)
+	d = {}
+	for i in ss:
+		d[i] = s.count(i)
+	maximum = max(d.values())
+	l = [int(i) for i in d if d[i]==maximum]
+	return min(l)
