@@ -9,4 +9,6 @@
 
 def largestperfectsquare(n):
 	# your code goes here
-	pass
+    a = int((n)**(1/2))
+    b = a**2
+    return b
