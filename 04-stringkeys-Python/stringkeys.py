@@ -4,8 +4,8 @@ using the first two letters of the string."""
 
 class HashTable(object):
     def __init__(self):
-        # self.table = [None]*10000
-        self.table = {}
+        self.table = [None]*10000
+        # self.table = {}
 
     def store(self, string):
         """Input a string that's stored in 
@@ -13,14 +13,18 @@ class HashTable(object):
         # Hash Value = (ASCII Value of First Letter * 100) + ASCII Value of Second Letter 
         # Your code goes here
         hash_value = ord(string[0])*100 + ord(string[1])
-        self.table[string] = hash_value
+        # self.table[string] = hash_value
+        self.table[hash_value] = string
         
     def lookup(self, string):
         """Return the hash value if the
         string is already in the table.
         Return -1 otherwise."""
         # Your code goes here
-        return self.table.get(string, -1)
+        hash_value = ord(string[0])*100 + ord(string[1])
+        if(self.table[hash_value] == string):
+            return hash_value            
+        return -1
         
     def calculate_hash_value(self, string):
         """Helper function to calulate a
