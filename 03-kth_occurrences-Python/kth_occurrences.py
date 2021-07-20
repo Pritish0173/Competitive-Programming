@@ -3,12 +3,14 @@
 # can account as K-th the most frequent character then, print any one of them.
 
 
-
 def fun_kth_occurrences(s, n):
-    setstr = set(s)
+    # setstr = set(s)
     d = {}
-    for i in setstr:
-        d[i] = s.count(i)
+    for i in s:
+        if(i not in d):
+            d[i] = 1
+        else:
+            d[i] += 1
     l = []
     for i in d:
         l.append([d[i],i])
