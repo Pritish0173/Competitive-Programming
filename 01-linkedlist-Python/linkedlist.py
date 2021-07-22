@@ -81,9 +81,7 @@ class LinkedList(object):
         while current:
             if current.value == value:
                 break
-            prev = current
             current = current.next 
         if(current == None):
             return 
-        prev.next = current.next
         current = None
