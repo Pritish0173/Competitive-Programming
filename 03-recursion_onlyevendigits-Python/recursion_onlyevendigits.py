@@ -9,4 +9,19 @@
 # Remember to not use strings. You may not use loops/iteration in this problem.
 
 def fun_recursion_onlyevendigits(l): 
-		return []
+    if type(l)==int:
+        if l == 0:
+            return 0
+        ud = l%10 
+        if ud%2==0:
+            return fun_recursion_onlyevendigits(l//10)*10 + ud
+        else:
+            return fun_recursion_onlyevendigits(l//10) + 0
+
+    if len(l)==0:
+        return []
+
+    if len(l)==1:
+        return [fun_recursion_onlyevendigits(l[0])]
+
+    return fun_recursion_onlyevendigits([l[0]]) + fun_recursion_onlyevendigits(l[1:])
