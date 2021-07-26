@@ -22,4 +22,11 @@
 
 def inverselookandsay(a):
 	# Your code goes here
-	pass
+	l = []
+	for i in a:
+		if i == ():
+			continue
+		count,value = i
+		l2 = [value]*count
+		l = l + l2
+	return l
