@@ -12,7 +12,9 @@
 
 def areAnagrams(s1, s2):
     # Your code goes here...
-    s = s1.lower() + s2.lower()
+    s1 = s1.lower()
+    s2 = s2.lower()
+    s = s1 + s2
     for i in s:
         if i not in s2 or i not in s1 or s1.count(i)!=s2.count(i):
             return False
