@@ -5,4 +5,14 @@
 
 def isperfectsquare(n):
 	# your code goes here
-	pass
+	if type(n)==int and n<0:
+		return False
+	if type(n)==str:
+		if n.isdigit():
+			n = int(n)
+		else:
+			return False
+	sqrroot = n**0.5
+	if int(sqrroot)==sqrroot:
+		return True
+	return False
