@@ -6,6 +6,17 @@
 
 
 def fun_alternatingsum(a): 
-	return 0
+	if len(a) == 0:
+		return 0
+	flag = True
+	Sum = 0
+	for i in a:
+		if flag:
+			Sum += i
+			flag = False
+		else:
+			Sum -= i
+			flag = True
+	return Sum
 
 
