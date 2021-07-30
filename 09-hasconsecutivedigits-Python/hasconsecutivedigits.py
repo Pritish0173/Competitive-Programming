@@ -4,4 +4,10 @@
 
 def hasconsecutivedigits(n):
 	# your code goes here
-	pass
+	s = str(abs(n))
+	temp = ""
+	for i in s:
+		if i == temp:
+			return True
+		temp = i
+	return False
