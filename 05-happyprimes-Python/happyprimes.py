@@ -16,16 +16,31 @@ def sumOfSquaresOfDigits(n):
     for i in s:
         Sum += int(i)**2
     return Sum
-    
+
+def isPrime(n):
+    if n <2:
+        return False
+    if n == 2:
+        return True
+    if n%2 == 0:
+        return False
+    maxfactor = round(n**0.5)
+    for i in range(3,maxfactor+1,2):
+        if n%i == 0:
+            return False
+    return True
 
 def ishappyprimenumber(n):
     # Your code goes here
-    for i in range(30):
-        Sum = sumOfSquaresOfDigits(n)
-        print(Sum)
-        if Sum==1:
-            return True
-        if Sum==4:
+    if not isPrime(n):
+        return False
+    seen = set()
+    seen.add(n)
+    num = n
+    while num!=1:
+        Sum = sumOfSquaresOfDigits(num)
+        if Sum in seen or Sum==4:
             return False
-        n = Sum
-    # return False
+        seen.add(Sum)
+        num = Sum
+    return True
