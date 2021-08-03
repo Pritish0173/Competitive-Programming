@@ -14,9 +14,26 @@
 # If nobody wins (there is no data), return None (not the 
 # string "None"). So, for example:
 
+
 def topScorer(data):
     # Your code goes here...
-    return ""
+    if data=='':
+        return None
+    l = data.splitlines()
+    l = [i.split(',') for i in l]
+    highest = 0
+    topscorers = ""
+    for i in range(len(l)):
+        name = l[i][0]
+        scores = list(map(int,l[i][1:]))
+        Sum = sum(scores)
+        if Sum>highest:
+            highest = Sum
+            topscorers = name
+        elif Sum==highest:
+            topscorers += "," + name
+        l[i] = [name]+scores
+    return topscorers
 
 data = '''\
 Fred,10,20,30,40
